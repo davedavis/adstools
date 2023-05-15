@@ -12,6 +12,12 @@
         padding: 0;
     }
 
+    html
+    {
+        width: 600px; /* max: 1000px */
+        height: 450px; /* max: 750px */
+    }
+
     body {
         background-color: #fff ;
     }
@@ -21,9 +27,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        max-width: 400px;
+        /*max-width: 400px;*/
         padding: 1rem;
         color: #333;
+        position: relative;
     }
 
     section.header{
@@ -50,9 +57,16 @@
 
     button:hover{
         box-shadow: 0 0 0.2rem #545567;
-
     }
 
+
+    #settings-link svg {
+        fill: #333;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
 
 </style>
 
@@ -67,10 +81,11 @@
         <button id="btn-suggestions">Generate Asset Suggestions</button>
         <button id="btn-tweaks">Tweaks</button>
     </section>
-</div>
 
-</body>
+</div>
 
 <script src="popup.js"></script>
 
+
+</body>
 </html>

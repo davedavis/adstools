@@ -9,6 +9,11 @@
     "48": "icons/adstools48.png",
     "128": "icons/adstools128.png"
   },
+
+  "options_ui": {
+    "page": "options/options.html"
+  },
+
   "background": {
     "service_worker": "background.js"
   },
@@ -19,9 +24,10 @@
       "48": "icons/adstools48.png",
       "128": "icons/adstools128.png"
     },
-    "permissions": ["tabs", "activeTab"],
+    "permissions": ["tabs", "activeTab", "storage"],
     "default_popup": "popup/popup.html"
   },
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "js": ["./content.js"],

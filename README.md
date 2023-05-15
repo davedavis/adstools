@@ -42,3 +42,13 @@ adstools/
 ## Getting Started
 This is not ready for public consumption. Do not install or load. 
 
+
+## Dev Notes
+To access stored values in popup.js/html
+```javascript
+chrome.storage.local.get(['OPEN_API_KEY', 'GOOGLE_ADS_API_KEY', 'GPT_VERSION'], function(result) {
+    console.log('Open API Key is ', result.OPEN_API_KEY);
+    console.log('Google Ads API Key is ', result.GOOGLE_ADS_API_KEY);
+    console.log('GPT Version is ', result.GPT_VERSION);
+});
+```

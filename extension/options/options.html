@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AdsTools Extension Options</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html
+    {
+      width: 600px; /* max: 1000px */
+      height: 450px; /* max: 750px */
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      color: #333;
+    }
+
+    section.header{
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    section.inputs{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    label{
+      margin: 0.5rem 0;
+    }
+
+    input, select {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      width: 100%;
+    }
+
+    button{
+      margin: 0.2rem 0;
+      padding: 1rem 2rem;
+      width: 100%;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      background-color: #343541;
+      color: #fff;
+    }
+
+    button:hover{
+      box-shadow: 0 0 0.2rem #545567;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <section class="header">
+    <h1>AdsTools - AI Power Tools for Paid Advertising</h1>
+  </section>
+
+  <section class="inputs">
+    <label for="open-api-key">Open API Key</label>
+    <input type="text" id="open-api-key" />
+
+    <label for="google-ads-api-key">Google Ads API Key</label>
+    <input type="text" id="google-ads-api-key" />
+
+    <label for="gpt-version">GPT Version</label>
+    <select id="gpt-version">
+      <option value="GPT 3.5">GPT 3.5</option>
+      <option value="GPT 4">GPT 4</option>
+    </select>
+  </section>
+
+  <div id="status"></div>
+  <button id="save">Save</button>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>
