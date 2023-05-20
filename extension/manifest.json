@@ -9,11 +9,9 @@
     "48": "icons/adstools48.png",
     "128": "icons/adstools128.png"
   },
-
   "options_ui": {
     "page": "options/options.html"
   },
-
   "background": {
     "service_worker": "background.js"
   },
@@ -24,10 +22,15 @@
       "48": "icons/adstools48.png",
       "128": "icons/adstools128.png"
     },
-    "permissions": ["tabs", "activeTab", "storage"],
     "default_popup": "popup/popup.html"
   },
-  "permissions": ["storage"],
+  "permissions": ["tabs", "activeTab", "storage"],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "content_scripts": [
     {
       "js": ["./content.js"],

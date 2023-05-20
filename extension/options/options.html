@@ -29,6 +29,17 @@
       color: #333;
     }
 
+    .input-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .tooltip-icon {
+      height: 2rem;  /* Adjust based on your input field height */
+      margin-left: 0.5rem;
+    }
+
     section.header{
       font-size: 1.3rem;
       text-align: center;
@@ -50,6 +61,52 @@
       margin: 0.5rem 0;
       padding: 0.5rem;
       width: 100%;
+    }
+
+    .tweaks {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .tweaks .header {
+      font-weight: bold;
+      font-size: 1.3rem; /* Add the same font-size as the main header */
+      text-align: center; /* Align the text to the center */
+      margin-bottom: 0.5rem;
+    }
+
+    .tweak-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .tweak-option label {
+      width: 80%; /* Increase the width of the label to 80% */
+    }
+
+    .tweak-option div {
+      display: flex;
+      justify-content: flex-end; /* This will right align the radio buttons */
+      width: 20%; /* Decrease the width of the radio buttons container to 20% */
+    }
+
+
+    .tweak-option input {
+      margin-left: 0.5rem;
+    }
+
+    .tweaks div.option {
+      display: grid;
+      grid-template-columns: 80% 10% 10%; /* Adjusted from 70% 15% 15% to 80% 10% 10% */
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .tweaks label {
+      margin-left: 0.5rem; /* Added margin-left to labels */
     }
 
     button{
@@ -75,18 +132,53 @@
   </section>
 
   <section class="inputs">
-    <label for="open-api-key">Open API Key</label>
-    <input type="text" id="open-api-key" />
-
-    <label for="google-ads-api-key">Google Ads API Key</label>
-    <input type="text" id="google-ads-api-key" />
-
-    <label for="gpt-version">GPT Version</label>
-    <select id="gpt-version">
-      <option value="GPT 3.5">GPT 3.5</option>
-      <option value="GPT 4">GPT 4</option>
-    </select>
+    <div class="input-container">
+      <input type="password" id="open-api-key" placeholder="Open API Key" />
+      <img src="../icons/tooltip.png" class="tooltip-icon" alt="Tooltip" />
+    </div>
+    <div class="input-container">
+      <input type="password" id="google-ads-api-key" placeholder="Google Ads API Key" />
+      <img src="../icons/tooltip.png" class="tooltip-icon" alt="Tooltip" />
+    </div>
+    <div class="input-container">
+      <label for="gpt-version">GPT Version</label>
+      <select id="gpt-version">
+        <option value="GPT 3.5">GPT 3.5</option>
+        <option value="GPT 4">GPT 4</option>
+      </select>
+      <img src="../icons/tooltip.png" class="tooltip-icon" alt="Tooltip" />
+    </div>
   </section>
+
+
+
+<!--  <hr style="margin-top: 2rem; margin-bottom: 2rem;">-->
+
+    <section class="inputs tweaks">
+      <div class="header">Tweaks</div>
+      <div class="tweak-option">
+        <label for="hide-notifications">Hide Google Ads Notification (Stops From Blocking Search Results)</label>
+        <div>
+          <input type="radio" id="hide-notifications-true" name="hide-notifications" value="true" />
+          <label for="hide-notifications-true">Yes</label>
+          <input type="radio" id="hide-notifications-false" name="hide-notifications" value="false" checked/>
+          <label for="hide-notifications-false">No</label>
+        </div>
+      </div>
+      <div class="tweak-option">
+        <label for="dismiss-ads">Auto Dismiss Ads Recommendations From Non-Recommendations Page</label>
+        <div>
+          <input type="radio" id="dismiss-ads-true" name="dismiss-ads" value="true" />
+          <label for="dismiss-ads-true">Yes</label>
+          <input type="radio" id="dismiss-ads-false" name="dismiss-ads" value="false" checked/>
+          <label for="dismiss-ads-false">No</label>
+        </div>
+      </div>
+    </section>
+
+
+  </section>
+
 
   <div id="status"></div>
   <button id="save">Save</button>

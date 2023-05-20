@@ -51,4 +51,12 @@ chrome.storage.local.get(['OPEN_API_KEY', 'GOOGLE_ADS_API_KEY', 'GPT_VERSION'], 
     console.log('Google Ads API Key is ', result.GOOGLE_ADS_API_KEY);
     console.log('GPT Version is ', result.GPT_VERSION);
 });
+
+chrome.storage.local.get(['HIDE_NOTIFICATIONS', 'DISMISS_ADS'], function(result) {
+    console.log('Value of HIDE_NOTIFICATIONS is ', result.HIDE_NOTIFICATIONS);
+    console.log('Value of DISMISS_ADS is ', result.DISMISS_ADS);
+});
 ```
+
+### To Build
+npm run watch
